@@ -1,0 +1,44 @@
+<%- include("partials/header"); %>
+
+<!-- title section -->
+
+
+
+
+<div class="outer-wrapper">
+
+  <div class="wrapper">
+
+
+    <% images.forEach(function(image) { %>
+
+      <div class="slide">
+        <!-- <div class="video">
+          <div class="blog-image"> -->
+            <!-- <h1>"<%= image.title %>"</h1> -->
+            <img class="imageFrame" src="/images/<%= image.image %>">
+          <!-- </div>
+        </div> -->
+      </div>
+
+    <%  }); %>
+
+  </div>
+</div>
+
+<div class="videoBox">
+  <video id="hero" loop muted src="/videos/Clouds3.mp4" autoplay poster="posterimage.jpg"></video>
+  <!-- <iframe class="fullscreen" loop muted autoplay src="https://player.vimeo.com/video/422059873" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen autoplay poster="posterimage.jpg"></iframe> -->
+  <!-- <p><a href="https://vimeo.com/422059873">Clouds2</a> from <a href="https://vimeo.com/user81480248">Louis Garavaglia</a> on <a href="https://vimeo.com">Vimeo</a>.</p> -->
+
+</div>
+
+
+
+
+
+
+
+
+<!-- footer section -->
+<%- include("partials/footer"); %>
