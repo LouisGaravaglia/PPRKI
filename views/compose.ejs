@@ -6,126 +6,38 @@
 
 <div class="videosContainer">
 
-  <h3 class="form-header" >Videos Page Only Post</h3>
+  <h3 class="form-header" >Image Upload Page</h3>
 
-  <form class="" action="/videoSubmitForm" method="post">
+  <form class="" action="/imageSubmitForm" method="post">
     <div class="form-group">
-      <label class="form-label" for="exampleInputEmail1">Video Embed Code</label>
-      <input name="videoEmbed" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <label class="form-label" for="exampleInputEmail1">Image File Name</label>
+      <input name="imageLink" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
     <div class="form-group">
-      <label class="form-label" for="exampleInputEmail1">Video Title</label>
-      <input name="videoTitle" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <label class="form-label" for="exampleInputEmail1">Image Title</label>
+      <input name="imageTitle" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
     <div class="form-group">
-      <label class="form-label" for="exampleInputEmail1">Video Description</label>
-      <textarea class="form-control" cols="20" rows="3" aria-label="With textarea" name="videoContent"></textarea>
+      <label class="form-label" for="exampleInputEmail1">Location Description</label>
+      <textarea class="form-control" cols="20" rows="3" aria-label="With textarea" name="locationInfo"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary form-button">Submit</button>
-  </form>
-
-  <form action="/deleteVid" method="post">
-    <button name="butt" value='2' class="btn btn-primary btn-danger form-button">Delete Video with Title of:</button>
-    <input type="text" name="deleteTitle" value="">
+    <button type="submit" class="btn btn-primary form-button">Upload This Image</button>
   </form>
 
 </div>
 
+<div class="deleteContainer">
 
-<div class="featuredVideosContainer">
-
-  <h3 class="form-header" >Featured Videos Only Post</h3>
-
-  <form class="" action="/featuredVideoSubmitForm" method="post">
-    <div class="form-group">
-      <label class="form-label" for="exampleInputEmail1">Featured Video Embed Code</label>
-      <input name="featuredVideoEmbed" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="exampleInputEmail1">Featured Video Title</label>
-      <input name="featuredVideoTitle" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="exampleInputEmail1">Featured Video Description</label>
-      <textarea class="form-control" cols="20" rows="3" aria-label="With textarea" name="featuredVideoContent"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary form-button">Submit</button>
+    <h3 class="form-header" >Delete Image</h3>
+    
+  <form action="/deleteImage" method="post">
+    <button name="butt" value='2' class="btn btn-primary btn-danger form-button">Delete Image with Title of:</button>
+    <input type="text" name="deletedImage" value="">
   </form>
-
-  <form action="/deleteFeaturedVid" method="post">
-    <button name="butt" value='2' class="btn btn-primary btn-danger form-button">Delete Featured Video with Title of:</button>
-    <input type="text" name="deleteFeaturedTitle" value="">
-  </form>
-
-
-</div>
-
 </div>
 
 
 
 
-
-<div class="blogBox">
-
-
-<div class="blogsContainer">
-
-  <h3 class="form-header" >Blogs Page Only Post</h3>
-
-  <form class="" action="/blogsSubmitForm" method="post">
-    <div class="form-group">
-      <label class="form-label" for="exampleInputEmail1">Image Link</label>
-      <input name="blogImage" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="exampleInputEmail1">Blog Title</label>
-      <input name="blogTitle" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="exampleInputEmail1">Blog Body</label>
-      <textarea class="form-control" cols="40" rows="5" aria-label="With textarea" name="blogContent"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary form-button">Submit</button>
-  </form>
-
-  <form action="/deleteBlog" method="post">
-    <button name="butt" value='2' class="btn btn-primary btn-danger form-button">Delete Blog with Title of:</button>
-    <input type="text" name="deleteBlogTitle" value="">
-  </form>
-
-</div>
-
-
-<div class="featuredBlogsContainer">
-
-  <h3 class="form-header" >Featured Blogs Only Post</h3>
-
-  <form class="" action="/featuredBlogsSubmitForm" method="post">
-    <div class="form-group">
-      <label class="form-label" for="exampleInputEmail1">Image Link</label>
-      <input name="featuredBlogImage" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="exampleInputEmail1">Featured Blog Title</label>
-      <input name="featuredBlogTitle" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="exampleInputEmail1">Featured Blog Body</label>
-      <textarea class="form-control" cols="40" rows="5" aria-label="With textarea" name="featuredBlogContent"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary form-button">Submit</button>
-  </form>
-
-  <form action="/deleteFeaturedBlog" method="post">
-    <button name="butt" value='2' class="btn btn-primary btn-danger form-button">Delete Featured Blog with Title of:</button>
-    <input type="text" name="deleteFeaturedBlogTitle" value="">
-  </form>
-
-
-
-
-
-</div>
 
 </div>

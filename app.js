@@ -44,7 +44,7 @@ app.get("/compose", function (req, res) {
 });
 
 /////////FEATURED VIDEO POST SECTION
-app.post("/featuredVideoSubmitForm", function (req, res) {
+app.post("/imageSubmitForm", function (req, res) {
   const image = new Image({
     image: req.body.imageLink,
     title: _.startCase(req.body.imageTitle),
@@ -56,6 +56,19 @@ app.post("/featuredVideoSubmitForm", function (req, res) {
       res.redirect("/");
     } else {
       console.log(err);
+    }
+  });
+});
+
+///////BLOG DELETE SECTION
+app.post("/deleteImage", function (req, res) {
+  const deletedImage = _.startCase(req.body.deletedImage);
+
+  Image.deleteOne({ title: deletedImage }, function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect("/");
     }
   });
 });

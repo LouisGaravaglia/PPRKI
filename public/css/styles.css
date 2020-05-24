@@ -8,6 +8,10 @@
   position: absolute;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  /* the two items below, scroll-snaps, are for getting the slides to snap to the edges */
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
+  z-index: 1;
 }
 
 ::-webkit-scrollbar {
@@ -17,8 +21,11 @@
 .wrapper {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  flex: 1;
+    justify-content: center;
   /* width of wrapper needs to be equal to total width of all the content slides added up (so if 4 slides at 100%, width of wrapper needs to be 400) */
-  width: 200vw;
+  width: 800vw;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
 }
@@ -26,12 +33,107 @@
 .slide {
   width: 100vw;
   height: 100vh;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  /* background: rgb(
+    204,
+    204,
+    204
+  ); /* Fallback for older browsers without RGBA-support */ */
+  background: rgba(204, 204, 204, 0);
+  scroll-snap-align: start;
+  /* margin-top: 1%;
+  padding-top: 1%; */
+  /* z-index: 99; */
+  /* position: absolute; */
+  /* top: 2em;
+  padding: 1em 1em;
+  width: 100%; */
+  /* color: blue; */
+  /* font-size: 300%;
+  height: 400%; */
 }
 
-.one {
+/* .one {
   background: #efdefe;
+  scroll-snap-align: start;
 }
 
 .two {
   background: #a3f3d3;
+  scroll-snap-align: start;
+}
+.three {
+  background: blue;
+  scroll-snap-align: start;
+}
+
+.four {
+  background: red;
+  scroll-snap-align: start;
+} */
+
+/* CSS FOR IMAGES */
+
+.imageFrame {
+  max-width: 100%;
+  border-image: 3px solid;
+  border-color: white;
+  border-style: solid;
+ border-width: 50px;
+ border-color: white;
+ margin-bottom: 75px;
+
+}
+
+/* CSS FOR VIDEO background  */
+
+.videoBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#hero {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  /* display: flex; */
+  /* z-index: -1;
+  width: 100%;
+  height: 100%; */
+  /* overflow-y: hidden;
+  overflow-x: hidden; */
+  /* top: 0;
+  left: 0; */
+}
+
+/* .fullscreen {
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  right: 10;
+
+
+} */
+
+/* CSS FOR COMPOSE Page */
+
+.videosBox {
+  display: flex;
+}
+
+.videosContainer {
+  flex: 1;
+  padding: 0 20px 0 20px;
+}
+
+.deleteContainer {
+  flex: 1;
+  padding: 0 20px 0 20px;
 }
