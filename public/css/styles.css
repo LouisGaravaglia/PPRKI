@@ -55,7 +55,7 @@ body {
   flex: 1;
   justify-content: center;
   /* width of wrapper needs to be equal to total width of all the content slides added up (so if 4 slides at 100%, width of wrapper needs to be 400) */
-  width: 300vw;
+  width: 400vw;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
 }
