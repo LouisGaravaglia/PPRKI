@@ -1,3 +1,33 @@
+/* NAVBAR */
+
+#nav-bar {
+  position: absolute;
+  grid-area: nav-bar;
+  /* opacity: 0.95; */
+  /* background-color: white; */
+  /* margin: 0px;
+  padding: 0px; */
+}
+
+.navbar-brand {
+  /* color: #fff; */
+}
+
+/* BODY */
+
+body {
+  /* prevents the whitespace bounce at top and bottom when you scroll */
+  overscroll-behavior: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* SLIDER WRAPPERS */
+
 .outer-wrapper {
   width: 100vh;
   height: 100vw;
@@ -23,9 +53,9 @@
   flex-direction: row;
   align-items: center;
   flex: 1;
-    justify-content: center;
+  justify-content: center;
   /* width of wrapper needs to be equal to total width of all the content slides added up (so if 4 slides at 100%, width of wrapper needs to be 400) */
-  width: 800vw;
+  width: 300vw;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
 }
@@ -37,6 +67,8 @@
   justify-content: center;
   align-items: center;
   display: flex;
+  margin: 0;
+  padding: 0;
   /* background: rgb(
     204,
     204,
@@ -78,14 +110,14 @@
 /* CSS FOR IMAGES */
 
 .imageFrame {
-  max-width: 100%;
+  height: auto;
+  width: auto;
+  max-width: 385px;
+  max-height: 100%;
   border-image: 3px solid;
   border-color: white;
   border-style: solid;
- border-width: 50px;
- border-color: white;
- margin-bottom: 75px;
-
+  border-width: 50px;
 }
 
 /* CSS FOR VIDEO background  */
@@ -95,6 +127,9 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 #hero {
@@ -103,6 +138,8 @@
   min-height: 100vh;
   top: 0;
   left: 0;
+  margin: 0;
+  padding: 0;
   /* display: flex; */
   /* z-index: -1;
   width: 100%;

@@ -13,10 +13,13 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/poprockDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://louieg3:Louis0578@cluster0-zowe1.mongodb.net/poprockDB",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 ///////// SYNTAX FOR CREATING A NEW SCHEMA FOR IMAGES
 const imagesSchema = new mongoose.Schema({
