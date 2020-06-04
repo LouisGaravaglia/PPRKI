@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 mongoose.connect(
-  "mongodb+srv://louieg3:Louis0578@cluster0-zowe1.mongodb.net/poprockDB",
+  "mongodb+srv://louieg3:Louis0578@pprki-zowe1.mongodb.net/<dbname>?retryWrites=true&w=majority/poprockDB",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -24,8 +24,8 @@ mongoose.connect(
 ///////// SYNTAX FOR CREATING A NEW SCHEMA FOR IMAGES
 const imagesSchema = new mongoose.Schema({
   image: String,
-  title: String,
-  location: String,
+  date: String,
+  info: String,
 });
 
 const Image = mongoose.model("Image", imagesSchema);
@@ -37,6 +37,7 @@ app.get("/", function (req, res) {
       console.log(err);
     } else {
       res.render("home", { images: images });
+      // res.render("gallery", { images: images });
     }
   });
 });
@@ -46,12 +47,17 @@ app.get("/compose", function (req, res) {
   res.render("compose");
 });
 
+//////////gallery route
+app.get("/gallery", function (req, res) {
+  res.render("gallery");
+});
+
 /////////FEATURED VIDEO POST SECTION
 app.post("/imageSubmitForm", function (req, res) {
   const image = new Image({
     image: req.body.imageLink,
-    title: _.startCase(req.body.imageTitle),
-    location: req.body.locationInfo,
+    date: _.startCase(req.body.imageDate),
+    info: req.body.imageInfo,
   });
 
   image.save(function (err) {
