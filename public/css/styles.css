@@ -1,47 +1,45 @@
-/* NAVBAR */
-
-#nav-bar {
-  position: absolute;
-  grid-area: nav-bar;
-  /* opacity: 0.95; */
-  /* background-color: white; */
-  /* margin: 0px;
-  padding: 0px; */
-}
-
-.navbar-brand {
-  /* color: #fff; */
-}
-
-/* BODY */
-
-body {
-  /* prevents the whitespace bounce at top and bottom when you scroll */
-  overscroll-behavior: none;
-  margin: 0px;
-  padding: 0px;
-}
-
+/* Universal selector to make sure uniformity across all browsers */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* prevents the whitespace bounce at top and bottom when you scroll */
+  overscroll-behavior: none;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+}
+
+.navbar-text {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: normal;
+  color: #fff;
 }
 
 /* SLIDER WRAPPERS */
-
 .outer-wrapper {
+  position: absolute;
+  z-index: 1;
+  /* overflow-x: scroll; */
+  overflow-x: scroll;
   width: 100vh;
   height: 100vw;
   transform: rotate(-90deg) translateX(-100vh);
   transform-origin: top left;
-  overflow-x: scroll;
-  overflow-x: hidden;
-  position: absolute;
   scrollbar-width: none;
   -ms-overflow-style: none;
   /* the two items below, scroll-snaps, are for getting the slides to snap to the edges */
   scroll-snap-type: y mandatory;
   scroll-snap-align: start;
-  z-index: 1;
 }
 
 ::-webkit-scrollbar {
@@ -50,78 +48,99 @@ body {
 
 .wrapper {
   display: flex;
-  flex-direction: row;
   align-items: center;
   flex: 1;
+  flex-direction: row;
   justify-content: center;
   /* width of wrapper needs to be equal to total width of all the content slides added up (so if 4 slides at 100%, width of wrapper needs to be 400) */
-  width: 1500vw;
+  width: 3300vw;
+  height: 100vh;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
 }
 
+#wrapperSize {
+}
+
 .slide {
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
   flex: 1;
   justify-content: center;
-  align-items: center;
-  display: flex;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  /* background: rgb(
-    204,
-    204,
-    204
-  ); /* Fallback for older browsers without RGBA-support */ */
-  background: rgba(204, 204, 204, 0);
-  scroll-snap-align: start;
-  /* margin-top: 1%;
-  padding-top: 1%; */
-  /* z-index: 99; */
-  /* position: absolute; */
-  /* top: 2em;
-  padding: 1em 1em;
-  width: 100%; */
-  /* color: blue; */
-  /* font-size: 300%;
-  height: 400%; */
-}
-
-/* .one {
-  background: #efdefe;
   scroll-snap-align: start;
 }
-
-.two {
-  background: #a3f3d3;
-  scroll-snap-align: start;
-}
-.three {
-  background: blue;
-  scroll-snap-align: start;
-}
-
-.four {
-  background: red;
-  scroll-snap-align: start;
-} */
 
 /* CSS FOR IMAGES */
-
 .imageFrame {
-  height: auto;
   width: auto;
   max-width: 385px;
+  height: auto;
   max-height: 100%;
-  border-image: 3px solid;
-  border-color: white;
-  border-style: solid;
   border-width: 50px;
+  border-style: solid;
+  border-color: white;
+  border-image: 3px solid;
+}
+
+/* CSS FOR GALLERY */
+.spacer {
+  padding-bottom: 60px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  grid-gap: 20px;
+  justify-content: center;
+  margin: 0 60px;
+  scroll-behavior: smooth;
+  /* flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 40px;
+  margin-left: 40px; */
+}
+
+.gallery-img {
+  max-width: 150px;
+  min-wid: 100px;
+  /* flex: 1;
+  margin: 40px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: white;
+  border-image: 3px solid; */
+}
+
+.videoBox-gallery {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS FOR DATE */
+.dateStyle {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+  font-style: normal;
+  position: absolute;
+  top: 19.5px;
+  left: 100px;
+  color: white;
 }
 
 /* CSS FOR VIDEO background  */
-
 .videoBox {
   position: absolute;
   top: 0;
@@ -134,43 +153,25 @@ body {
 
 #hero {
   position: fixed;
-  min-width: 100%;
-  min-height: 100vh;
   top: 0;
   left: 0;
+  min-width: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
-  /* display: flex; */
-  /* z-index: -1;
-  width: 100%;
-  height: 100%; */
-  /* overflow-y: hidden;
-  overflow-x: hidden; */
-  /* top: 0;
-  left: 0; */
 }
 
-/* .fullscreen {
-  width: 200%;
-  height: 200%;
-  position: absolute;
-  right: 10;
-
-
-} */
-
 /* CSS FOR COMPOSE Page */
-
 .videosBox {
   display: flex;
 }
 
 .videosContainer {
   flex: 1;
-  padding: 0 20px 0 20px;
+  padding: 0 20px;
 }
 
 .deleteContainer {
   flex: 1;
-  padding: 0 20px 0 20px;
+  padding: 0 20px;
 }
