@@ -13,13 +13,18 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect(
-  "mongodb+srv://louieg3:Louis0578@pprki-zowe1.mongodb.net/<dbname>?retryWrites=true&w=majority/poprockDB",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+// mongoose.connect(
+//   "mongodb+srv://louieg3:Louis0578@pprki-zowe1.mongodb.net/<dbname>?retryWrites=true&w=majority/poprockDB",
+//   {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   }
+// );
+
+mongoose.connect("mongodb://localhost:27017/poprockDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 ///////// SYNTAX FOR CREATING A NEW SCHEMA FOR IMAGES
 const imagesSchema = new mongoose.Schema({
@@ -37,7 +42,6 @@ app.get("/", function (req, res) {
       console.log(err);
     } else {
       res.render("home", { images: images });
-      // res.render("gallery", { images: images });
     }
   });
 });
@@ -49,7 +53,13 @@ app.get("/compose", function (req, res) {
 
 //////////gallery route
 app.get("/gallery", function (req, res) {
-  res.render("gallery");
+  Image.find({}, function (err, images) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("gallery", { images: images });
+    }
+  });
 });
 
 /////////FEATURED VIDEO POST SECTION
@@ -82,8 +92,8 @@ app.post("/deleteImage", function (req, res) {
   });
 });
 
-// let port;
-let port = process.env.PORT;
+let port;
+// let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }

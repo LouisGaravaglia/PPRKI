@@ -1,44 +1,44 @@
 <%- include("partials/header"); %>
 
-<!-- title section -->
+	<!-- title section -->
+
+	<section id="navbar" class="sticky-top">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a class="navbar-text brand-text" href="#title">PPRKI</a>
+		</nav>
+	</section>
+
+	<div class="outer-wrapper">
+
+		<div class="wrapper">
+
+			<% images.forEach(function(image) { %>
+
+				<div class="slide">
+
+					<!-- <div class="imageBox"> -->
+
+						<h1 class="dateStyle">
+							<%= image.date %>
+						</h1>
+
+						<img class="imageFrame" src="/images/<%= image.image %>">
+
+					<!-- </div> -->
+
+				</div>
+
+				<%  }); %>
+
+				</div>
+			</div>
+
+			<div class="videoBox">
+				<video id="hero" loop="loop" muted="muted" src="/videos/Clouds3reduced.mov" autoplay="autoplay" poster="posterimage.jpg"></video>
+				<!-- <iframe class="fullscreen" loop muted autoplay src="https://player.vimeo.com/video/422059873" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen autoplay poster="posterimage.jpg"></iframe> -->
+				<!-- <p><a href="https://vimeo.com/422059873">Clouds2</a> from <a href="https://vimeo.com/user81480248">Louis Garavaglia</a> on <a href="https://vimeo.com">Vimeo</a>.</p> -->
+			</div>
 
 
-
-
-<div class="outer-wrapper">
-
-  <div class="wrapper">
-
-
-    <% images.forEach(function(image) { %>
-
-      <div class="slide">
-        <!-- <div class="video">
-          <div class="blog-image"> -->
-            <!-- <h1>"<%= image.title %>"</h1> -->
-            <img class="imageFrame" src="/images/<%= image.image %>">
-          <!-- </div>
-        </div> -->
-      </div>
-
-    <%  }); %>
-
-  </div>
-</div>
-
-<div class="videoBox">
-  <video id="hero" loop muted src="/videos/Clouds3reduced.mov" autoplay poster="posterimage.jpg"></video>
-  <!-- <iframe class="fullscreen" loop muted autoplay src="https://player.vimeo.com/video/422059873" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen autoplay poster="posterimage.jpg"></iframe> -->
-  <!-- <p><a href="https://vimeo.com/422059873">Clouds2</a> from <a href="https://vimeo.com/user81480248">Louis Garavaglia</a> on <a href="https://vimeo.com">Vimeo</a>.</p> -->
-
-</div>
-
-
-
-
-
-
-
-
-<!-- footer section -->
-<%- include("partials/footer"); %>
+			<!-- footer section -->
+			<%- include("partials/footer"); %>
