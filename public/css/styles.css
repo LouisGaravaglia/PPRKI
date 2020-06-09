@@ -10,7 +10,6 @@ body {
   padding: 0;
   /* prevents the whitespace bounce at top and bottom when you scroll */
   overscroll-behavior: none;
-  background: #d7debd;
   transition: all 0.2s ease-in-out;
 }
 
@@ -28,6 +27,7 @@ body {
 }
 
 /* SLIDER WRAPPERS */
+
 .outer-wrapper {
   position: absolute;
   z-index: 1;
@@ -36,11 +36,11 @@ body {
   height: 100vw;
   transform: rotate(-90deg) translateX(-100vh);
   transform-origin: top left;
-  /* scrollbar-width: none; */
+  scrollbar-width: none;
   -ms-overflow-style: none;
   /* the two items below, scroll-snaps, are for getting the slides to snap to the edges */
   scroll-snap-type: y mandatory;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 
 ::-webkit-scrollbar {
@@ -48,41 +48,68 @@ body {
 }
 
 .wrapper {
+  position: absolute;
+  /* top: 200px; */
   display: flex;
   align-items: center;
   flex: 1;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   /* width of wrapper needs to be equal to total width of all the content slides added up (so if 4 slides at 100%, width of wrapper needs to be 400) */
-  width: 400vw;
+  width: 100vw;
   height: 100vh;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
 }
 
 .slide {
-  position: relative;
+  /* position: relative; */
   display: flex;
   align-items: center;
-  flex: 1;
+  /* flex: 1; */
   justify-content: center;
-  width: 100vw;
+  width: auto;
   height: 100vh;
   margin: 0;
   padding: 0;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+  opacity: 0.5;
 }
 
 /* CSS FOR IMAGES */
 .imageFrame {
-  width: auto;
-  max-width: 385px;
+  width: 600px;
+  max-width: 800px;
   height: auto;
-  max-height: 100%;
-  border-width: 50px;
+  max-height: auto;
+  /* margin-left: 100px;
+  margin-right: 100px; */
+  padding-right: 140px;
+  padding-left: 140px;
+  /* border-width: 50px;
   border-style: solid;
   border-color: white;
-  border-image: 3px solid;
+  border-image: 3px solid; */
+}
+
+/* .slide[data-background="#aecacd"] {
+  opacity: 1;
+} */
+
+.arrow {
+  opacity: 1;
+  width: 100px;
+  max-width: 100px;
+  height: auto;
+  max-height: auto;
+  margin-left: 100px;
+  margin-right: 200px;
+  cursor: pointer;
+  scroll-snap: off;
+}
+
+.arrow:hover {
+  filter: invert(100%);
 }
 
 /* CSS FOR GALLERY */
