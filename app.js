@@ -8,6 +8,13 @@ const _ = require("lodash");
 
 const app = express();
 
+var jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const { window } = new JSDOM();
+const { document } = new JSDOM("").window;
+global.document = document;
+var $ = require("jquery")(window);
+
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,7 +37,7 @@ mongoose.connect("mongodb://localhost:27017/poprockDB", {
 const imagesSchema = new mongoose.Schema({
   image: String,
   date: String,
-  info: String,
+  color: String,
 });
 
 const Image = mongoose.model("Image", imagesSchema);
@@ -67,7 +74,7 @@ app.post("/imageSubmitForm", function (req, res) {
   const image = new Image({
     image: req.body.imageLink,
     date: _.startCase(req.body.imageDate),
-    info: req.body.imageInfo,
+    color: req.body.imageColor,
   });
 
   image.save(function (err) {
