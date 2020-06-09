@@ -8,26 +8,40 @@
 		</nav>
 	</section>
 
-	<div class="outer-wrapper">
+<section id="page">
 
-		<div class="wrapper">
+	<div id="projectContainer" class="outer-wrapper">
+
+		<div id="projectSlider" class="wrapper" style="top: 200px">
+
 
 			<% images.forEach(function(image) { %>
 
-        <article class="slide" data-background="<%= image.color %>">
+        <article class="slide projectItem" data-background="<%= image.color %>" >
 
-						<h1 class="dateStyle">
+						<!-- <h1 class="dateStyle">
 							<%= image.date %>
-						</h1>
+						</h1> -->
 
-						<img class="imageFrame" data-background="<%= image.color %>" src="/images/<%= image.image %>">
+						<img class="imageFrame" data-background="<%= image.color %>" data-opacity="1" src="/images/<%= image.image %>">
 
 				</article>
 
 			<%  }); %>
 
+
+  <article class="slide projectItem">
+    <!-- <button type="button" class="btn btn-outline-secondary" name="button" href="#" id="scroll">BACK TO START</button> -->
+    <img id="topBtn" class="arrow" src="/images/arrow.png">
+
+  </article>
+
+
 		</div>
+
 	</div>
+
+</section>
 
 			<div class="videoBox gradient">
 				<!-- <video id="hero" loop="loop" muted="muted" src="/videos/Clouds3reduced.mov" autoplay="autoplay" poster="posterimage.jpg"></video> -->
