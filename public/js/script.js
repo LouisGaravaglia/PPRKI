@@ -27,9 +27,6 @@ document.querySelectorAll(".imageFrame").forEach((imageFrame) => {
   observer.observe(imageFrame);
 });
 
-// var original = document.querySelector("body");
-// var originalColor = original.dataset.background;
-
 //////////////////////////////////////////////////images are half opacity when not fully visable
 var intersectionOptionsTwo = {
   root: null, // use the viewport
@@ -103,32 +100,19 @@ function selectstart(event) {
 
 ////////////////////////////////////////////////////////////////////////////BACK TO BEGINNING button
 
-// $(document).ready(function () {
-//   // $(window).scroll(function () {
-//   //   if ($(this).scrollTop() > 100) {
-//   //     $(".arrow").fadeIn();
-//   //   } else {
-//   //     $(".arrow").fadeOut();
-//   //   }
-//   // });
-//   // $(".arrow").click(function () {
-//   //   console.log("arrow clicked");
-//   //   $("html, body").animate({ scrollTop: 0 }, 600);
-//   //   return false;
-//   // });
-// });
+(function () {
+  let btn = document.querySelector("#topBtn");
 
-// $(document).ready(function () {
-//   $("#topBtn").click(function () {
-//     console.log("arrow clicked");
-//     $("html, body").animate({ scrollRight: 0 }, 800);
-//     // return false;
-//   });
-// });
-
-// $(function () {
-//   $("#topBtn").bind("click", function (event) {
-//     $("html, body").animate({ scrollTop: 0 }, 1500);
-//     event.preventDefault();
-//   });
-// });
+  btn.addEventListener(
+    "click",
+    function (event) {
+      let container = document.querySelector("#projectContainer");
+      container.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    },
+    false
+  );
+})();
