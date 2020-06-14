@@ -99,25 +99,6 @@ function selectstart(event) {
   if (dragging) DomEvent.stop(event);
 }
 
-////////////////////////////////////////////////////////////////////////////BACK TO BEGINNING button
-
-function arrowScroll() {
-  let btn = document.querySelector("#topBtn");
-
-  btn.addEventListener(
-    "click",
-    function (event) {
-      let container = document.querySelector("#projectContainer");
-      container.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
-    },
-    false
-  );
-}
-
 ////////////////////////////////////////////////////////////////////////SET CHANGING GRADIENT BACKGROUND COLORS
 var colors = [
   "#f3d58b",
@@ -159,6 +140,25 @@ var currentColor = 0;
   $(".videoBox-gallery").css("background-color", colors[currentColor++]);
 
   setTimeout(switchColor, 2000);
+})();
 
-  console.log(`Gallery background chaning to ${currentColor}`);
+////////////////////////////////////////////////////////////////////////////BACK TO BEGINNING button
+
+(function arrowScroll() {
+  let btn = document.querySelector("#topBtn");
+
+  console.log("Arrow clicked");
+
+  btn.addEventListener(
+    "click",
+    function (event) {
+      let container = document.querySelector("#projectContainer");
+      container.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    },
+    false
+  );
 })();
