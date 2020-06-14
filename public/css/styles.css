@@ -17,6 +17,16 @@ body {
 
 .navbar {
   position: fixed;
+  margin: 0 auto;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-text {
@@ -33,9 +43,12 @@ body {
   text-decoration: none;
 }
 
+.pprki {
+  flex: 1;
+}
+
 .gallery-link {
-  position: absolute;
-  display: inline-block;
+  flex: 1;
 }
 
 /* SLIDER WRAPPERS */
