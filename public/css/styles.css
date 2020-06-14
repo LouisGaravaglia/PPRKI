@@ -16,8 +16,9 @@ body {
 /* NAVBAR */
 
 .navbar {
-  position: fixed;
-  margin: 0 auto;
+  /* position: fixed; */
+  /* margin: 0 auto; */
+  border: 1px solid red;
 }
 
 .navbar ul {
@@ -35,20 +36,16 @@ body {
   font-weight: 500;
   font-style: normal;
   color: #fff;
-  flex: auto;
-  flex-direction: row;
-  justify-content: flex-start;
 }
 .navbar-text:hover {
   text-decoration: none;
 }
 
-.pprki {
+.navbar li {
   flex: 1;
 }
 
 .gallery-link {
-  flex: 1;
 }
 
 /* SLIDER WRAPPERS */
