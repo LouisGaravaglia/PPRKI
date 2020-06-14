@@ -15,9 +15,6 @@ body {
 
 /* NAVBAR */
 
-.sticky-top {
-  position: relative;
-}
 .navbar {
   position: fixed;
 }
