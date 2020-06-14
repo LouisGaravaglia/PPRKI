@@ -15,11 +15,10 @@ body {
 
 /* NAVBAR */
 
-.sticky-top {
-  position: relative;
-}
 .navbar {
   position: fixed;
+  display: flex;
+  z-index: 2;
 }
 
 .navbar-text {
@@ -28,17 +27,23 @@ body {
   font-weight: 500;
   font-style: normal;
   color: #fff;
-  flex: auto;
-  flex-direction: row;
-  justify-content: flex-start;
 }
 .navbar-text:hover {
   text-decoration: none;
 }
 
+.pprki {
+  flex: 1;
+  position: fixed;
+  top: 0;
+  left: 15px;
+}
+
 .gallery-link {
-  position: absolute;
-  display: inline-block;
+  flex: 1;
+  position: fixed;
+  top: 0;
+  right: 15px;
 }
 
 /* SLIDER WRAPPERS */
