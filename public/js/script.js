@@ -1,4 +1,4 @@
-////////////////////////////////////////////////// BACKGROUND COLOR CHANGE WHEN IMAGE IS IN VIEWPORT
+////////////////////////////////////////////////// HOME PAGE BACKGROUND COLOR CHANGE WHEN IMAGE IS IN VIEWPORT
 var intersectionOptions = {
   root: null, // use the viewport
   rootMargin: "0px",
@@ -27,7 +27,7 @@ document.querySelectorAll(".imageFrame").forEach((imageFrame) => {
 //////////////////////////////////////////////////images are half opacity when not fully visable,
 var intersectionOptionsTwo = {
   root: null, // use the viewport
-  rootMargin: "0px",
+  rootMargin: "20px",
   threshold: 1,
 };
 
@@ -37,10 +37,12 @@ function intersectionCallbackTwo(items, observerTwo) {
       let fullOpac = 1;
       let color = item.target.dataset.background;
       $(".slide[data-background=" + color + "]").css("opacity", fullOpac);
+      console.log("I SEE YOU" + color);
     } else {
       var halfOpac = 0.5;
       let colorTwo = item.target.dataset.background;
       $(".slide[data-background=" + colorTwo + "]").css("opacity", halfOpac);
+      console.log("i dont see you " + colorTwo);
     }
   });
 }
