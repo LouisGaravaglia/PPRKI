@@ -8,12 +8,9 @@ var intersectionOptions = {
 function intersectionCallback(entries, observer) {
   entries.forEach((entry) => {
     if (entry.intersectionRatio >= 1) {
-      console.log("Fully visible!");
-      console.log(entry.target.dataset.background);
       var boom = entry.target.dataset.background;
       $("body").css("background-color", boom);
     } else {
-      console.log("Not fully visible!");
     }
   });
 }
@@ -39,11 +36,8 @@ function intersectionCallbackTwo(items, observerTwo) {
     if (item.intersectionRatio >= 1) {
       let fullOpac = 1;
       let color = item.target.dataset.background;
-      console.log("Fully visible! Full Opacity");
-      console.log(".slide[data-background=" + color + "]");
       $(".slide[data-background=" + color + "]").css("opacity", fullOpac);
     } else {
-      console.log("Not fully visible! Half Opacity");
       var halfOpac = 0.5;
       let colorTwo = item.target.dataset.background;
       $(".slide[data-background=" + colorTwo + "]").css("opacity", halfOpac);
@@ -70,8 +64,6 @@ var intersectionOptionsThree = {
 function intersectionCallbackThree(entries, observer) {
   entries.forEach((entry) => {
     if (entry.intersectionRatio <= 1) {
-      console.log("A tag is visible");
-
       let vpWidth = Math.max(
         document.documentElement.clientWidth || 0,
         window.innerWidth || 0
@@ -81,7 +73,6 @@ function intersectionCallbackThree(entries, observer) {
       let halfWidth = (vpWidth - imageSize) / 2;
       $(".wrapper").css("top", halfWidth);
     } else {
-      console.log("A tag is not visible");
     }
   });
 }
@@ -146,8 +137,6 @@ var currentColor = 0;
 
 (function arrowScroll() {
   let btn = document.querySelector("#topBtn");
-
-  console.log("Arrow clicked");
 
   btn.addEventListener(
     "click",
