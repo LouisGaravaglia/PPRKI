@@ -39,11 +39,19 @@ body {
   left: 15px;
 }
 
+.pprki:hover {
+  filter: invert(100%);
+}
+
 .gallery-link {
   flex: 1;
   position: fixed;
   top: 0;
   right: 15px;
+}
+
+.gallery-link:hover {
+  filter: invert(100%);
 }
 
 /* SLIDER WRAPPERS */
